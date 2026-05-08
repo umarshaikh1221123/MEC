@@ -1,3 +1,163 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEC Life Care Joining Form | Ayurvedic Wellness Registration</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="MEC Life Care Ayurvedic Wellness Registration Form. Join our herbal wellness program and begin your journey to natural health." />
+  <meta name="keywords" content="MEC Life Care, Ayurvedic, herbal wellness, joining form, registration, natural health" />
+  <meta name="author" content="MEC Life Care" />
+  <meta property="og:title" content="MEC Life Care Joining Form" />
+  <meta property="og:description" content="Join MEC Life Care's Ayurvedic Wellness Program" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =============================================
+       CSS CUSTOM PROPERTIES & RESET
+    ============================================= */
+    :root {
+      --green-deep:    #0d3320;
+      --green-dark:    #1a4d2e;
+      --green-mid:     #2d7a4f;
+      --green-bright:  #3da870;
+      --green-light:   #6fcf97;
+      --green-pale:    #a8e6c1;
+      --gold:          #c9a84c;
+      --gold-light:    #e8c97a;
+      --cream:         #f5f0e8;
+      --white:         #ffffff;
+      --glass-bg:      rgba(255,255,255,0.08);
+      --glass-border:  rgba(255,255,255,0.18);
+      --shadow-deep:   rgba(0,0,0,0.4);
+      --text-primary:  #e8f5ee;
+      --text-muted:    rgba(200,230,215,0.7);
+      --radius:        16px;
+      --radius-lg:     24px;
+      --transition:    0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    [data-theme="light"] {
+      --glass-bg:     rgba(255,255,255,0.65);
+      --glass-border: rgba(45,122,79,0.25);
+      --text-primary: #0d3320;
+      --text-muted:   rgba(26,77,46,0.65);
+      --green-deep:   #e8f7ef;
+      --green-dark:   #c6ead8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #061a0e 0%, #0d3320 35%, #1a4d2e 65%, #0a2818 100%);
+      min-height: 100vh;
+      color: var(--text-primary);
+      overflow-x: hidden;
+      transition: background var(--transition);
+    }
+
+    [data-theme="light"] body {
+      background: linear-gradient(135deg, #d4f0e0 0%, #b8e8cc 35%, #c6ead8 65%, #a8dfc0 100%);
+    }
+
+    /* =============================================
+       ANIMATED CANVAS BACKGROUND
+    ============================================= */
+    #particles-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* =============================================
+       FLOATING LEAVES (CSS)
+    ============================================= */
+    .leaves-container {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .leaf {
+      position: absolute;
+      font-size: clamp(16px, 3vw, 32px);
+      animation: floatLeaf linear infinite;
+      opacity: 0;
+      will-change: transform, opacity;
+    }
+
+    @keyframes floatLeaf {
+      0%   { transform: translateY(110vh) rotate(0deg);   opacity: 0; }
+      10%  { opacity: 0.55; }
+      90%  { opacity: 0.35; }
+      100% { transform: translateY(-15vh) rotate(720deg); opacity: 0; }
+    }
+
+    /* =============================================
+       LAYOUT WRAPPER
+    ============================================= */
+    .page-wrapper {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      padding: 20px 16px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* =============================================
+       DARK MODE TOGGLE
+    ============================================= */
+    .toggle-bar {
+      width: 100%;
+      max-width: 720px;
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 12px;
+    }
+
+    .dark-toggle {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(12px);
+      border-radius: 50px;
+      padding: 8px 18px;
+      cursor: pointer;
+      color: var(--text-primary);
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all var(--transition);
+    }
+
+    .dark-toggle:hover {
+      background: rgba(255,255,255,0.15);
+      transform: scale(1.04);
+    }
+
+    /* =============================================
+       LIVE CLOCK
     ============================================= */
     .live-clock {
       font-family: 'Cormorant Garamond', serif;
@@ -63,6 +223,1254 @@
       background-size: 200%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(10px, 2vw, 12px);
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      animation: shimmer 3s linear infinite;
+    }
+
+    @keyframes shimmer { to { background-position: 200%; } }
+
+    .main-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(26px, 6vw, 48px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--white);
+      text-shadow: 0 2px 20px rgba(61,168,112,0.5);
+      margin-bottom: 10px;
+    }
+
+    [data-theme="light"] .main-title { color: var(--green-deep); text-shadow: none; }
+
+    .subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(14px, 2.5vw, 18px);
+      font-style: italic;
+      color: var(--green-light);
+      letter-spacing: 1px;
+    }
+
+    .divider {
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 16px auto 0;
+      border-radius: 2px;
+    }
+
+    /* =============================================
+       GLASSMORPHISM FORM CARD
+    ============================================= */
+    .form-card {
+      width: 100%;
+      max-width: 720px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-radius: var(--radius-lg);
+      padding: clamp(24px, 5vw, 48px);
+      box-shadow:
+        0 8px 32px rgba(0,0,0,0.35),
+        0 2px 0 rgba(255,255,255,0.06) inset,
+        0 0 80px rgba(61,168,112,0.08);
+      animation: fadeSlideUp 0.9s ease both 0.2s;
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =============================================
+       REG ID & DATE STRIP
+    ============================================= */
+    .meta-strip {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .meta-badge {
+      flex: 1;
+      min-width: 180px;
+      background: rgba(61,168,112,0.12);
+      border: 1px solid rgba(111,207,151,0.25);
+      border-radius: 10px;
+      padding: 10px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .meta-badge label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--green-light);
+      opacity: 0.8;
+    }
+
+    .meta-badge span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--gold-light);
+    }
+
+    /* =============================================
+       SECTION LABEL
+    ============================================= */
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green-light);
+      opacity: 0.75;
+      margin-bottom: 18px;
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-heading::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(111,207,151,0.4), transparent);
+    }
+
+    /* =============================================
+       FORM GRID & FIELDS
+    ============================================= */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-group.full-width { grid-column: 1 / -1; }
+
+    .form-group label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .form-group label .required { color: #ff7eb3; margin-left: 2px; }
+
+    .input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 14px;
+      font-size: 16px;
+      pointer-events: none;
+      z-index: 1;
+      transition: transform var(--transition);
+    }
+
+    .form-control {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1.5px solid rgba(111,207,151,0.2);
+      border-radius: 12px;
+      padding: 13px 14px 13px 44px;
+      color: var(--text-primary);
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      outline: none;
+      transition: all var(--transition);
+      -webkit-appearance: none;
+    }
+
+    .form-control::placeholder { color: rgba(200,230,215,0.35); }
+
+    .form-control:focus {
+      border-color: var(--green-bright);
+      background: rgba(61,168,112,0.1);
+      box-shadow: 0 0 0 3px rgba(61,168,112,0.2), 0 4px 20px rgba(61,168,112,0.15);
+    }
+
+    .form-control:focus + .input-icon,
+    .input-wrap:focus-within .input-icon { transform: scale(1.2); }
+
+    .form-control option { background: #1a4d2e; color: #e8f5ee; }
+
+    [data-theme="light"] .form-control {
+      background: rgba(255,255,255,0.7);
+      border-color: rgba(45,122,79,0.3);
+      color: var(--green-deep);
+    }
+
+    [data-theme="light"] .form-control::placeholder { color: rgba(13,51,32,0.35); }
+
+    /* Textarea */
+    textarea.form-control {
+      padding-top: 13px;
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    /* =============================================
+       RADIO/CHECKBOX GROUPS
+    ============================================= */
+    .radio-group, .payment-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .radio-label, .payment-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1.5px solid rgba(111,207,151,0.2);
+      border-radius: 10px;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all var(--transition);
+      user-select: none;
+    }
+
+    .radio-label:hover, .payment-label:hover {
+      border-color: var(--green-bright);
+      background: rgba(61,168,112,0.12);
+    }
+
+    .radio-label input, .payment-label input { display: none; }
+
+    .radio-label.selected, .payment-label.selected {
+      border-color: var(--green-bright);
+      background: linear-gradient(135deg, rgba(61,168,112,0.25), rgba(45,122,79,0.2));
+      box-shadow: 0 0 14px rgba(61,168,112,0.2);
+      color: var(--green-light);
+    }
+
+    .radio-dot {
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      border: 2px solid rgba(111,207,151,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all var(--transition);
+    }
+
+    .radio-label.selected .radio-dot {
+      border-color: var(--green-bright);
+      background: var(--green-bright);
+      box-shadow: 0 0 8px var(--green-bright);
+    }
+
+    /* =============================================
+       SUBMIT BUTTON
+    ============================================= */
+    .submit-btn {
+      width: 100%;
+      margin-top: 32px;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, var(--green-mid), var(--green-bright), var(--green-mid));
+      background-size: 200% auto;
+      border: none;
+      border-radius: 14px;
+      color: #fff;
+      font-family: 'Nunito', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(61,168,112,0.4);
+    }
+
+    .submit-btn::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .submit-btn:hover::before { left: 100%; }
+
+    .submit-btn:hover {
+      background-position: right center;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(61,168,112,0.55);
+    }
+
+    .submit-btn:active { transform: translateY(0); }
+
+    .submit-btn:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* Spinner */
+    .spinner {
+      width: 20px; height: 20px;
+      border: 2.5px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .submit-btn.loading .spinner { display: block; }
+    .submit-btn.loading .btn-text { display: none; }
+    .submit-btn.loading .btn-icon { display: none; }
+
+    /* =============================================
+       POPUPS / MODALS
+    ============================================= */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(6px);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal-box {
+      background: linear-gradient(145deg, #1a4d2e, #0d3320);
+      border: 1px solid rgba(111,207,151,0.3);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 60px rgba(61,168,112,0.15);
+      transform: scale(0.85);
+      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    }
+
+    .modal-overlay.visible .modal-box { transform: scale(1); }
+
+    .modal-icon { font-size: 64px; margin-bottom: 18px; animation: bounce-in 0.5s 0.2s both; }
+
+    @keyframes bounce-in {
+      0%   { transform: scale(0); }
+      60%  { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    .modal-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .modal-msg {
+      font-size: 14px;
+      color: rgba(200,230,215,0.8);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .modal-reg-id {
+      background: rgba(61,168,112,0.15);
+      border: 1px solid rgba(111,207,151,0.3);
+      border-radius: 10px;
+      padding: 10px 18px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      color: var(--gold-light);
+      margin-bottom: 24px;
+      letter-spacing: 2px;
+    }
+
+    .modal-close-btn {
+      background: linear-gradient(135deg, var(--green-mid), var(--green-bright));
+      border: none;
+      border-radius: 10px;
+      padding: 12px 32px;
+      color: #fff;
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all var(--transition);
+      margin: 4px;
+    }
+
+    .modal-close-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(61,168,112,0.4); }
+
+    .modal-pdf-btn {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border: none;
+      border-radius: 10px;
+      padding: 12px 32px;
+      color: #0d3320;
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all var(--transition);
+      margin: 4px;
+    }
+
+    .modal-pdf-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,168,76,0.4); }
+
+    /* Error modal */
+    .modal-box.error-box {
+      border-color: rgba(255,100,100,0.3);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 60px rgba(255,80,80,0.1);
+    }
+
+    /* =============================================
+       VALIDATION ERRORS
+    ============================================= */
+    .error-msg {
+      font-size: 11px;
+      color: #ff8fab;
+      margin-top: 4px;
+      display: none;
+    }
+
+    .form-group.has-error .form-control { border-color: rgba(255,100,100,0.6); }
+    .form-group.has-error .error-msg { display: block; }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .footer {
+      margin-top: 36px;
+      text-align: center;
+      color: rgba(200,230,215,0.45);
+      font-size: 13px;
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 1px;
+    }
+
+    .footer strong { color: var(--green-light); opacity: 0.7; }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 600px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full-width { grid-column: 1; }
+      .meta-strip { flex-direction: column; }
+      .form-card { padding: 24px 18px; }
+    }
+
+    /* =============================================
+       FIELD GROUPS (No icon variant)
+    ============================================= */
+    .no-icon .form-control { padding-left: 14px; }
+
+    /* =============================================
+       SCROLLBAR
+    ============================================= */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(61,168,112,0.4); border-radius: 3px; }
+
+    /* =============================================
+       TERMS & CONDITIONS CHECKBOX
+    ============================================= */
+    .terms-wrap {
+      margin-top: 24px;
+      background: rgba(61,168,112,0.07);
+      border: 1.5px solid rgba(111,207,151,0.2);
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: border-color var(--transition);
+    }
+
+    .terms-wrap.has-error {
+      border-color: rgba(255,100,100,0.6);
+    }
+
+    .custom-checkbox {
+      position: relative;
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      margin-top: 1px;
+    }
+
+    .custom-checkbox input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      margin: 0;
+      z-index: 2;
+    }
+
+    .checkbox-box {
+      width: 22px;
+      height: 22px;
+      border: 2px solid rgba(111,207,151,0.45);
+      border-radius: 6px;
+      background: rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      transition: all var(--transition);
+      pointer-events: none;
+    }
+
+    .custom-checkbox input[type="checkbox"]:checked ~ .checkbox-box {
+      background: linear-gradient(135deg, var(--green-mid), var(--green-bright));
+      border-color: var(--green-bright);
+      box-shadow: 0 0 10px rgba(61,168,112,0.4);
+    }
+
+    .terms-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .terms-text a {
+      color: var(--gold-light);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      cursor: pointer;
+      transition: color var(--transition);
+    }
+
+    .terms-text a:hover { color: var(--gold); }
+
+    .terms-error {
+      font-size: 11px;
+      color: #ff8fab;
+      margin-top: 6px;
+      display: none;
+      padding-left: 2px;
+    }
+
+    .terms-wrap.has-error + .terms-error { display: block; }
+
+    /* Terms Modal */
+    .terms-modal-box {
+      background: linear-gradient(145deg, #1a4d2e, #0d3320);
+      border: 1px solid rgba(111,207,151,0.3);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      max-width: 500px;
+      width: 100%;
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      transform: scale(0.85);
+      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    }
+
+    .modal-overlay.visible .terms-modal-box { transform: scale(1); }
+
+    .terms-modal-body {
+      overflow-y: auto;
+      flex: 1;
+      padding-right: 8px;
+      font-size: 13px;
+      color: rgba(200,230,215,0.85);
+      line-height: 1.75;
+      margin: 16px 0;
+    }
+
+    .terms-modal-body h3 {
+      color: var(--gold-light);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      margin: 14px 0 6px;
+    }
+
+    .terms-modal-body::-webkit-scrollbar { width: 4px; }
+    .terms-modal-body::-webkit-scrollbar-thumb { background: rgba(61,168,112,0.4); border-radius: 2px; }
+
+  </style>
+</head>
+<body>
+
+<!-- Animated Canvas -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- Floating Leaves -->
+<div class="leaves-container" id="leaves-container"></div>
+
+<!-- MODAL - Success -->
+<div class="modal-overlay" id="success-modal">
+  <div class="modal-box">
+    <div class="modal-icon">🌿</div>
+    <div class="modal-title">Registration Successful!</div>
+    <div class="modal-msg">Your Ayurvedic Wellness journey begins now.<br/>Welcome to the MEC Life Care family.</div>
+    <div class="modal-reg-id" id="success-reg-id">REG-######</div>
+    <div>
+      <button class="modal-pdf-btn" id="download-pdf-btn">📄 Download Receipt</button>
+      <button class="modal-close-btn" onclick="closeModal('success-modal')">✓ Continue</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL - Error -->
+<div class="modal-overlay" id="error-modal">
+  <div class="modal-box error-box">
+    <div class="modal-icon">⚠️</div>
+    <div class="modal-title">Submission Failed</div>
+    <div class="modal-msg">We could not submit your form. Please check your internet connection and try again.</div>
+    <button class="modal-close-btn" onclick="closeModal('error-modal')">Try Again</button>
+  </div>
+</div>
+
+<!-- MODAL - Terms & Conditions -->
+<div class="modal-overlay" id="terms-modal">
+  <div class="terms-modal-box">
+    <div class="modal-title" style="font-family:'Cormorant Garamond',serif;font-size:22px;color:#fff;">📜 Terms &amp; Conditions</div>
+    <div class="terms-modal-body">
+      <h3>1. Membership Agreement</h3>
+      By registering with MEC Life Care, you agree to become a member of our Ayurvedic Wellness Program and abide by all policies, guidelines, and codes of conduct set forth by MEC Life Care.
+
+      <h3>2. Authenticity of Information</h3>
+      You confirm that all information provided in this registration form is true, accurate, and complete. Providing false or misleading information may result in cancellation of membership without refund.
+
+      <h3>3. Payment Terms</h3>
+      All payments made are subject to MEC Life Care's refund and cancellation policy. Membership fees are non-transferable unless explicitly stated otherwise.
+
+      <h3>4. Product Usage</h3>
+      MEC Life Care Ayurvedic products are intended for general wellness purposes. They are not a substitute for professional medical advice, diagnosis, or treatment. Please consult a qualified healthcare provider for any medical concerns.
+
+      <h3>5. Privacy Policy</h3>
+      Your personal data will be stored securely and used solely for the purpose of managing your membership and communicating relevant updates. We will never sell or share your data with third parties without your consent.
+
+      <h3>6. Nominee Declaration</h3>
+      You confirm that the nominee named in this form has given consent to be listed and that the information provided is accurate.
+
+      <h3>7. Code of Conduct</h3>
+      Members are expected to conduct themselves respectfully within the MEC Life Care community. Any form of fraud, misrepresentation, or unethical behaviour may lead to immediate termination of membership.
+
+      <h3>8. Amendments</h3>
+      MEC Life Care reserves the right to update these terms at any time. Members will be notified of any significant changes via their registered contact details.
+
+      <h3>9. Governing Law</h3>
+      These terms are governed by the laws of India. Any disputes arising shall be subject to the jurisdiction of courts in the registered office location of MEC Life Care.
+    </div>
+    <div style="display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;">
+      <button class="modal-close-btn" onclick="closeModal('terms-modal')">✓ I Understand</button>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE WRAPPER -->
+<div class="page-wrapper">
+
+
+
+  <!-- Live Clock -->
+  <div class="live-clock" id="live-clock">🕐 Loading...</div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo-ring">🌿</div>
+    <div class="brand-tag">🌱 Natural · Holistic · Authentic 🌱</div>
+    <h1 class="main-title">MEC LIFE CARE<br/>JOINING FORM</h1>
+    <p class="subtitle">✦ Ayurvedic Wellness Registration ✦</p>
+    <div class="divider"></div>
+  </header>
+
+  <!-- FORM CARD -->
+  <div class="form-card">
+
+    <!-- Meta Strip -->
+    <div class="meta-strip">
+      <div class="meta-badge">
+        <label>🆔 Registration ID</label>
+        <span id="reg-id-display">Generating...</span>
+      </div>
+      <div class="meta-badge">
+        <label>📅 Submission Date</label>
+        <span id="date-display">—</span>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <form id="joining-form" novalidate>
+
+      <!-- Hidden Web3Forms fields -->
+      <input type="hidden" name="access_key" value="650e463a-bd18-4aa1-9b3a-7dbdac61d69c" />
+      <input type="hidden" name="subject" value="🌿 New MEC Life Care Registration" />
+      <input type="hidden" name="from_name" value="MEC Life Care Registration Form" />
+      <input type="hidden" id="reg-id-input" name="Registration ID" />
+      <input type="hidden" id="date-input" name="Submission Date" />
+
+      <!-- Personal Info -->
+      <div class="section-heading">🌸 Personal Information</div>
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label>Full Name <span class="required">*</span></label>
+          <div class="input-wrap">
+            <input type="text" class="form-control" id="full-name" name="Full Name"
+              placeholder="Enter your full name" autocomplete="name" />
+            <span class="input-icon">👤</span>
+          </div>
+          <span class="error-msg">Please enter your full name.</span>
+        </div>
+
+        <div class="form-group">
+          <label>Mobile Number <span class="required">*</span></label>
+          <div class="input-wrap">
+            <input type="tel" class="form-control" id="mobile" name="Mobile Number"
+              placeholder="+91 XXXXX XXXXX" autocomplete="tel" maxlength="15" />
+            <span class="input-icon">📱</span>
+          </div>
+          <span class="error-msg">Enter a valid 10-digit mobile number.</span>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Address <span class="required">*</span></label>
+          <div class="input-wrap no-icon">
+            <textarea class="form-control" id="address" name="Address"
+              placeholder="Enter your complete address..." rows="3"></textarea>
+          </div>
+          <span class="error-msg">Please enter your address.</span>
+        </div>
+
+        <div class="form-group">
+          <label>Register Under ID <span class="required">*</span></label>
+          <div class="input-wrap">
+            <input type="text" class="form-control" id="register-under" name="Register Under ID"
+              placeholder="Sponsor/Referral ID" />
+            <span class="input-icon">🔗</span>
+          </div>
+          <span class="error-msg">Please enter the Register Under ID.</span>
+        </div>
+
+        <div class="form-group">
+          <label>Nominee Name <span class="required">*</span></label>
+          <div class="input-wrap">
+            <input type="text" class="form-control" id="nominee" name="Nominee Name"
+              placeholder="Enter nominee's name" />
+            <span class="input-icon">👥</span>
+          </div>
+          <span class="error-msg">Please enter your nominee's name.</span>
+        </div>
+
+      </div>
+
+      <!-- Gender -->
+      <div class="section-heading">🌺 Gender</div>
+      <div class="form-group full-width" id="gender-group">
+        <div class="radio-group" id="gender-options">
+          <label class="radio-label" onclick="selectOption(this, 'gender-options', 'gender-input')">
+            <input type="radio" name="Gender" value="Male" />
+            <div class="radio-dot"></div>
+            <span>♂ Male</span>
+          </label>
+          <label class="radio-label" onclick="selectOption(this, 'gender-options', 'gender-input')">
+            <input type="radio" name="Gender" value="Female" />
+            <div class="radio-dot"></div>
+            <span>♀ Female</span>
+          </label>
+
+        </div>
+        <input type="hidden" id="gender-input" name="Gender" />
+        <span class="error-msg" id="gender-error">Please select your gender.</span>
+      </div>
+
+      <!-- Payment -->
+      <div class="section-heading">💳 Payment Method</div>
+      <div class="form-group full-width" id="payment-group">
+        <div class="payment-group" id="payment-options">
+          <label class="payment-label" onclick="selectOption(this, 'payment-options', 'payment-input')">
+            <input type="radio" name="Payment Method" value="Cash" />
+            <span>💵 Cash</span>
+          </label>
+          <label class="payment-label" onclick="selectOption(this, 'payment-options', 'payment-input')">
+            <input type="radio" name="Payment Method" value="UPI" />
+            <span>📲 UPI</span>
+          </label>
+          <label class="payment-label" onclick="selectOption(this, 'payment-options', 'payment-input')">
+            <input type="radio" name="Payment Method" value="Bank Transfer" />
+            <span>🏦 Bank Transfer</span>
+          </label>
+          <label class="payment-label" onclick="selectOption(this, 'payment-options', 'payment-input')">
+            <input type="radio" name="Payment Method" value="Online Payment" />
+            <span>💻 Online Payment</span>
+          </label>
+        </div>
+        <input type="hidden" id="payment-input" name="Payment Method" />
+        <span class="error-msg" id="payment-error">Please select a payment method.</span>
+      </div>
+
+      <!-- Terms & Conditions -->
+      <div class="terms-wrap" id="terms-wrap">
+        <label class="custom-checkbox">
+          <input type="checkbox" id="terms-checkbox" name="Terms Accepted" value="Yes" />
+          <div class="checkbox-box">✓</div>
+        </label>
+        <div class="terms-text">
+          I accept the <a onclick="openModal('terms-modal')">Terms &amp; Conditions</a> and confirm that all information provided is accurate. I agree to abide by the rules and policies of MEC Life Care Ayurvedic Wellness Program. <span class="required" style="color:#ff7eb3;">*</span>
+        </div>
+      </div>
+      <span class="terms-error" id="terms-error">⚠ Please accept the Terms &amp; Conditions to proceed.</span>
+
+      <!-- Submit -->
+      <button type="submit" class="submit-btn" id="submit-btn">
+        <div class="btn-inner">
+          <div class="spinner"></div>
+          <span class="btn-icon">🌿</span>
+          <span class="btn-text">Submit Registration</span>
+        </div>
+      </button>
+
+    </form>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>🌿 &copy; 2026 <strong>MEC LIFE CARE</strong> | Ayurvedic Wellness</p>
+    <p style="margin-top:6px; font-size:11px; opacity:0.5;">Empowering Lives Through Nature · Since 2020</p>
+  </footer>
+
+</div><!-- /page-wrapper -->
+
+<!-- =============================================
+     JAVASCRIPT
+============================================= -->
+<script>
+/* ----------------------------------------
+   PARTICLES CANVAS
+---------------------------------------- */
+(function () {
+  const canvas = document.getElementById('particles-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [];
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function createParticle() {
+    return {
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 1.8 + 0.5,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: -Math.random() * 0.5 - 0.15,
+      alpha: Math.random() * 0.4 + 0.1,
+      color: ['#3da870','#6fcf97','#c9a84c','#a8e6c1'][Math.floor(Math.random()*4)]
+    };
+  }
+
+  function init() {
+    resize();
+    for (let i = 0; i < 90; i++) particles.push(createParticle());
+    window.addEventListener('resize', resize);
+    loop();
+  }
+
+  function loop() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach((p, i) => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.y < -10) particles[i] = createParticle(), particles[i].y = H + 5;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = p.alpha;
+      ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(loop);
+  }
+
+  init();
+})();
+
+/* ----------------------------------------
+   FLOATING LEAVES
+---------------------------------------- */
+(function () {
+  const container = document.getElementById('leaves-container');
+  const icons = ['🌿','🍃','🌱','🌾','🍀','🌲','🌳','🪴','🌴','🌵'];
+  const COUNT = 18;
+
+  for (let i = 0; i < COUNT; i++) {
+    const el = document.createElement('div');
+    el.className = 'leaf';
+    el.textContent = icons[Math.floor(Math.random() * icons.length)];
+    const dur  = 12 + Math.random() * 18;
+    const del  = -Math.random() * 20;
+    const left = Math.random() * 100;
+    el.style.cssText = `
+      left: ${left}%;
+      animation-duration: ${dur}s;
+      animation-delay: ${del}s;
+      font-size: ${16 + Math.random() * 20}px;
+    `;
+    container.appendChild(el);
+  }
+})();
+
+/* ----------------------------------------
+   LIVE CLOCK
+---------------------------------------- */
+function updateClock() {
+  const now = new Date();
+  const opts = { weekday:'long', year:'numeric', month:'long', day:'numeric',
+                 hour:'2-digit', minute:'2-digit', second:'2-digit' };
+  document.getElementById('live-clock').textContent =
+    '🕐 ' + now.toLocaleDateString('en-IN', opts);
+}
+updateClock();
+setInterval(updateClock, 1000);
+
+/* ----------------------------------------
+   REGISTRATION ID & DATE
+---------------------------------------- */
+function getNextRegNumber() {
+  // Use localStorage to persist counter across sessions
+  let counter = parseInt(localStorage.getItem('mlc_reg_counter') || '0', 10) + 1;
+  localStorage.setItem('mlc_reg_counter', counter);
+  return counter;
+}
+
+function generateRegId() {
+  const num = getNextRegNumber();
+  const padded = String(num).padStart(6, '0');
+  return `MLC-${padded}`;
+}
+
+let currentRegId = generateRegId();
+
+function formatDate(d) {
+  return d.toLocaleDateString('en-IN', { year:'numeric', month:'long', day:'numeric' });
+}
+
+const now = new Date();
+document.getElementById('reg-id-display').textContent = currentRegId;
+document.getElementById('date-display').textContent   = formatDate(now);
+document.getElementById('reg-id-input').value         = currentRegId;
+document.getElementById('date-input').value           = formatDate(now);
+
+/* ----------------------------------------
+   DARK / LIGHT TOGGLE
+---------------------------------------- */
+let isDark = true;
+function toggleTheme() {
+  isDark = !isDark;
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  document.getElementById('theme-icon').textContent  = isDark ? '☀️' : '🌙';
+  document.getElementById('theme-label').textContent = isDark ? 'Light Mode' : 'Dark Mode';
+}
+
+/* ----------------------------------------
+   RADIO / PAYMENT SELECTION
+---------------------------------------- */
+function selectOption(el, groupId, inputId) {
+  const group = document.getElementById(groupId);
+  group.querySelectorAll('.radio-label, .payment-label').forEach(l => l.classList.remove('selected'));
+  el.classList.add('selected');
+  const val = el.querySelector('input').value;
+  document.getElementById(inputId).value = val;
+
+  // Remove error
+  const errId = groupId === 'gender-options' ? 'gender-error' : 'payment-error';
+  document.getElementById(errId).style.display = 'none';
+}
+
+/* ----------------------------------------
+   FORM VALIDATION
+---------------------------------------- */
+function validateForm() {
+  let valid = true;
+
+  const fields = [
+    { id: 'full-name',      check: v => v.trim().length >= 2 },
+    { id: 'mobile',         check: v => /^[0-9+\s\-]{10,15}$/.test(v.trim()) },
+    { id: 'address',        check: v => v.trim().length >= 5 },
+    { id: 'register-under', check: v => v.trim().length >= 1 },
+    { id: 'nominee',        check: v => v.trim().length >= 2 },
+  ];
+
+  fields.forEach(f => {
+    const el    = document.getElementById(f.id);
+    const group = el.closest('.form-group');
+    if (!f.check(el.value)) {
+      group.classList.add('has-error');
+      valid = false;
+    } else {
+      group.classList.remove('has-error');
+    }
+  });
+
+  if (!document.getElementById('gender-input').value) {
+    document.getElementById('gender-error').style.display = 'block';
+    valid = false;
+  }
+
+  if (!document.getElementById('payment-input').value) {
+    document.getElementById('payment-error').style.display = 'block';
+    valid = false;
+  }
+
+  // Terms & Conditions check
+  const termsWrap = document.getElementById('terms-wrap');
+  const termsError = document.getElementById('terms-error');
+  if (!document.getElementById('terms-checkbox').checked) {
+    termsWrap.classList.add('has-error');
+    termsError.style.display = 'block';
+    valid = false;
+  } else {
+    termsWrap.classList.remove('has-error');
+    termsError.style.display = 'none';
+  }
+
+  return valid;
+}
+
+/* ----------------------------------------
+   MODAL HELPERS
+---------------------------------------- */
+function openModal(id)  { document.getElementById(id).classList.add('visible'); }
+function closeModal(id) { document.getElementById(id).classList.remove('visible'); }
+
+/* ----------------------------------------
+   SUCCESS SOUND (Web Audio API)
+---------------------------------------- */
+function playSuccessSound() {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const notes = [523.25, 659.25, 783.99, 1046.50];
+    notes.forEach((freq, i) => {
+      const osc  = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.frequency.value = freq;
+      osc.type = 'sine';
+      const start = ctx.currentTime + i * 0.12;
+      gain.gain.setValueAtTime(0.18, start);
+      gain.gain.exponentialRampToValueAtTime(0.001, start + 0.35);
+      osc.start(start);
+      osc.stop(start + 0.35);
+    });
+  } catch (e) { /* silent fail */ }
+}
+
+/* ----------------------------------------
+   PDF RECEIPT GENERATOR
+---------------------------------------- */
+let lastSubmission = {};
+
+function generatePDF() {
+  const d = lastSubmission;
+  const w = window.open('', '_blank', 'width=700,height=900');
+  w.document.write(`<!DOCTYPE html><html><head>
+    <title>MEC Life Care Receipt</title>
+    <style>
+      body { font-family: Georgia, serif; background: #f5f0e8; color: #1a4d2e; padding: 40px; }
+      .header { text-align:center; border-bottom: 3px double #2d7a4f; padding-bottom: 20px; margin-bottom: 30px; }
+      .header h1 { font-size: 28px; color: #1a4d2e; }
+      .header p  { color: #3da870; font-style: italic; }
+      .meta { display:flex; justify-content:space-between; background:#e8f7ef; padding:14px 20px; border-radius:8px; margin-bottom:24px; font-size:13px; }
+      table { width:100%; border-collapse:collapse; margin-bottom:24px; }
+      th { background:#1a4d2e; color:#fff; padding:10px 16px; text-align:left; font-size:13px; }
+      td { padding:10px 16px; border-bottom:1px solid #c6ead8; font-size:14px; }
+      tr:nth-child(even) td { background:#f0faf5; }
+      .footer-note { text-align:center; color:#3da870; font-style:italic; font-size:13px; margin-top:30px; border-top: 1px solid #a8e6c1; padding-top:16px; }
+      .stamp { text-align:center; font-size:48px; margin:20px 0; }
+    </style>
+  </head><body>
+    <div class="header">
+      <div style="font-size:48px">🌿</div>
+      <h1>MEC LIFE CARE</h1>
+      <p>Ayurvedic Wellness Registration Receipt</p>
+    </div>
+    <div class="meta">
+      <span><b>Registration ID:</b> ${d.regId}</span>
+      <span><b>Date:</b> ${d.date}</span>
+    </div>
+    <table>
+      <tr><th colspan="2">Registration Details</th></tr>
+      <tr><td><b>Full Name</b></td><td>${d.fullName}</td></tr>
+      <tr><td><b>Mobile Number</b></td><td>${d.mobile}</td></tr>
+      <tr><td><b>Address</b></td><td>${d.address}</td></tr>
+      <tr><td><b>Register Under ID</b></td><td>${d.regUnder}</td></tr>
+      <tr><td><b>Nominee Name</b></td><td>${d.nominee}</td></tr>
+      <tr><td><b>Gender</b></td><td>${d.gender}</td></tr>
+      <tr><td><b>Payment Method</b></td><td>${d.payment}</td></tr>
+    </table>
+    <div class="stamp">✅</div>
+    <div class="footer-note">
+      Thank you for joining MEC Life Care Ayurvedic Wellness Program.<br/>
+      This is your official registration receipt. Please keep it safe.<br/><br/>
+      © 2026 MEC LIFE CARE | Ayurvedic Wellness
+    </div>
+    <script>setTimeout(()=>window.print(),400);<\/script>
+  </body></html>`);
+  w.document.close();
+}
+
+document.getElementById('download-pdf-btn').addEventListener('click', generatePDF);
+
+/* ----------------------------------------
+   FORM SUBMIT
+---------------------------------------- */
+document.getElementById('joining-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  if (!validateForm()) return;
+
+  const btn = document.getElementById('submit-btn');
+  btn.classList.add('loading');
+  btn.disabled = true;
+
+  // Collect data
+  const formData = new FormData(this);
+
+  // Store for PDF
+  lastSubmission = {
+    regId:    currentRegId,
+    date:     document.getElementById('date-display').textContent,
+    fullName: document.getElementById('full-name').value,
+    mobile:   document.getElementById('mobile').value,
+    address:  document.getElementById('address').value,
+    regUnder: document.getElementById('register-under').value,
+    nominee:  document.getElementById('nominee').value,
+    gender:   document.getElementById('gender-input').value,
+    payment:  document.getElementById('payment-input').value,
+  };
+
+  try {
+    const res  = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body:   formData
+    });
+    const data = await res.json();
+
+    if (data.success) {
+      // Success
+      document.getElementById('success-reg-id').textContent = currentRegId;
+      openModal('success-modal');
+      playSuccessSound();
+
+      // Reset form
+      this.reset();
+      document.querySelectorAll('.radio-label, .payment-label').forEach(l => l.classList.remove('selected'));
+      document.getElementById('gender-input').value  = '';
+      document.getElementById('payment-input').value = '';
+      document.querySelectorAll('.form-group').forEach(g => g.classList.remove('has-error'));
+      document.getElementById('terms-checkbox').checked = false;
+      document.getElementById('terms-wrap').classList.remove('has-error');
+      document.getElementById('terms-error').style.display = 'none';
+
+      // New reg ID
+      currentRegId = generateRegId();
+      document.getElementById('reg-id-display').textContent = currentRegId;
+      document.getElementById('reg-id-input').value         = currentRegId;
+
+    } else {
+      openModal('error-modal');
+    }
+
+  } catch (err) {
+    openModal('error-modal');
+  } finally {
+    btn.classList.remove('loading');
+    btn.disabled = false;
+  }
+});
+
+/* ----------------------------------------
+   REAL-TIME INPUT VALIDATION
+---------------------------------------- */
+['full-name','mobile','address','register-under','nominee'].forEach(id => {
+  document.getElementById(id).addEventListener('input', function () {
+    this.closest('.form-group').classList.remove('has-error');
+  });
+});
+
+// Terms checkbox live validation
+document.getElementById('terms-checkbox').addEventListener('change', function () {
+  const termsWrap  = document.getElementById('terms-wrap');
+  const termsError = document.getElementById('terms-error');
+  if (this.checked) {
+    termsWrap.classList.remove('has-error');
+    termsError.style.display = 'none';
+  }
+});
+
+/* Close modal on overlay click */
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', function (e) {
+    if (e.target === this) this.classList.remove('visible');
+  });
+});
+</script>
+
+</body>
+</html>
+     -webkit-text-fill-color: transparent;
       background-clip: text;
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(10px, 2vw, 12px);
